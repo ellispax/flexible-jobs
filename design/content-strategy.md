@@ -25,6 +25,7 @@
 |-about us
 |-contact us
 |_salary
+|-jobs
 |---|--- job listing
 
 ```    
