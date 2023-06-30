@@ -9,7 +9,7 @@
 
 ---
 
-# Functions
+# Proposed Functions
 
 #### `chatbot: response`
 
