@@ -6,7 +6,7 @@
 <img src="./design/logos/fj-logo-color.svg" height="144px" style="background-color:transparent;">
 </div>
 
-<div width="50%">
+<div width="50%" style="color:#f2f2f2;">
 
 ## **"Make work fit your life"**
 
@@ -87,7 +87,10 @@
 
 1. Fork or Clone this repository.
 2. the code the `/web` folder.
-3. install the required pip packages
+3. install the required pip packages, notably
+   1. django
+   2. sqlite
+4. in the `/web` folder run the django server with `python manage.py runserver`
 
 ## Usage ✨
 
