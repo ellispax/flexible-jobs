@@ -1,6 +1,8 @@
 # 👜 Flexible-jobs
 
 > ## 🔥 **"Make work fit your life"**
+
+### Overview
         A job search django web-app in tandem with end of 
         week 2 for the repo 'flexing-pythonistas', 4 
         week python sprint.
@@ -13,11 +15,11 @@
 
 #### `chatbot: response`
 
-        Creating an online job portal/application 
+        🤖 : "Creating an online job portal/application 
         similar to Indeed or JobStreet is an ambitious 
         project. Here's an outline of the key features 
         and components you can consider implementing 
-        using Django:
+        using Django:"
 
 ## 📌 *User Authentication and Profiles:*
 
@@ -65,3 +67,16 @@
         portal/application. You can expand on these 
         ideas and customize them to fit your specific 
         requirements and preferences."
+
+---
+
+## Instructions
+
+1. 
+
+
+## Usage ✨
+
+Clone the repo locally and run:  
+
+`pip install -r requirements.txt`
