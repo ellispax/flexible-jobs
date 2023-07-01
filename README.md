@@ -86,7 +86,7 @@
 ## Instructions
 
 1. Fork or Clone this repository.
-2. the code the `/web` folder.
+2. the code is in the `/web` folder.
 3. install the required pip packages, notably
    1. django
    2. sqlite
