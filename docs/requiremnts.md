@@ -1,3 +1,9 @@
+<div align="center" style="justify:centre;background-color:#4ecdc4;padding:1rem; background-image:url('./../design/logos/fj-logo-color.svg'); height:90px;border-radius:.2rem;">
+
+<!-- ![](./../design/logos/fj-logo-color.svg) -->
+
+</div>
+
 # Requirements
 
 #### `chatbot: response`
