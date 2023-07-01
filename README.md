@@ -72,7 +72,9 @@
 
 ## Instructions
 
-1. 
+1. Fork or Clone this repository.
+2. the code the `/web` folder.
+3. install the required pip packages
 
 
 ## Usage ✨
