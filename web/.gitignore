@@ -1,2 +1,3 @@
 # sqlite db will be created on starting server
 db.sqlite3
+./main/__pycache__
