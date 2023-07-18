@@ -10,12 +10,15 @@
 
 ## Users
 
-    - avatar    <string>,
+    - avatar    <string>,   # location metadata of file to be kept
     - fname     <string>,
     - lname     <string>,
     - email     <string>(unique),
     - password  <string>,
-    - type      <string>[ admin, employer, employee ],
+    - type      <string>    [ admin, employer, employee ],
+    - city      <string>    # these 3 make up the address for simplicity {city, county, street}
+    - country   <string>
+    - street    <string>
     - status    <string> [active, banned]
 
 ## Qualifications
@@ -25,45 +28,48 @@
 
 ## Companies
 
-    - avatar,
-    - name,
-    - website,
-    - hq_address,
-    - details,
-    - email,
-    - password,
-    - type,
-    - status
+    - avatar,   <string>    # location metadata of file to be kept
+    - name,     <string>
+    - website,  <string>
+    - city      <string>
+    - country   <string>
+    - street    <string>
+    - bio,      <string>
+    - email,    <string>
+    - password, <string>
+    - sector,  <string>    
+    - status    <string>     [active, banned]
 
 ## Jobs
 
-    - name,
-    - email,
-    - salary,
-    - branch,
-    - expires,
-    - details,
-    - status    <string>[standby,waiting,published,approved,denied]
+    - name,      <string>
+    - email,     <string>
+    - salary,    <number>
+    - branch,    <string>
+    - expires,   <date>
+    - details,   <string>
+    - status     <string>   [standby, waiting, published, approved, denied]
 
 ## Messages
 
-    - ownerId,
-    - recipientId,
-    - content,
-    - created,
-    - updated
+    - ownerId,      <number>
+    - recipientId,  <number>
+    - content,      <string>
+    - created,      <date>
+    - updated       <date>
 
 ## applications
 
-    - userId,
-    - companyId,
-    - favorite,
-    - status
+    - userId,    <number>
+    - companyId, <number>
+    - favorite,  <bool>
+    - appliedOn, <date>
+    - status     <string>   [waiting, approved, denied]
 
 ## reports
 
-    - userId
-    - companyId
-    - details
-    - created
-    - updated
+    - reporterId    <number>
+    - userId        <number>
+    - details       <string>
+    - created       <date>
+    - updated       <date>
