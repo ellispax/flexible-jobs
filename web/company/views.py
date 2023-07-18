@@ -17,7 +17,7 @@ def create_company(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-@api_view(['GET', 'PUT'])           #get company profile using pk
+@api_view(['GET', 'PUT','DELETE'])           #get company profile using pk
 def company(request, pk):
     try:
         company = Company.objects.get(pk=pk)
@@ -27,11 +27,15 @@ def company(request, pk):
     if request.method == 'GET':
         serializer = CompanySerializer(company)
         return Response(serializer.data)
+
     elif request.method == 'PUT':
         serializer = CompanySerializer(company, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+        
+    elif request.method == 'DELETE':
+        company.delete()
+    return Response(status=status.HTTP_204_NO_CONTENT)
     
