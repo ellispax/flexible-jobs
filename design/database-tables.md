@@ -37,17 +37,21 @@
     - bio,      <string>
     - email,    <string>
     - password, <string>
-    - sector,  <string>    
+    - industry, <string> [list from 19 items, in file: `text-content.md` heading:INDUSTRIES]
+    - sector,   <string>    
     - status    <string>     [active, banned]
 
 ## Jobs
 
     - name,      <string>
     - email,     <string>
-    - salary,    <number>
+    - pay,       <string>  [used string to cater for ranges and other specifics]
     - branch,    <string>
+    - posted_on  <date>
     - expires,   <date>
-    - details,   <string>
+    - description,      <string>
+    - qualifications    <string>
+    - education  <string>
     - status     <string>   [standby, waiting, published, approved, denied]
 
 ## Messages

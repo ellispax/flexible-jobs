@@ -1,6 +1,33 @@
 
 # TEXT-CONTENT
 
+----
+> INDUSTRIES
+----
+
+1. Accounting
+2. Advertising
+3. Agriculture
+4. Architecture
+5. Automotive
+6. Banking
+7. Construction
+8. Education
+9. Energy
+10. Engineering
+11. Finance
+12. Healthcare
+13. Hospitality
+14. Information Technology
+15. Law
+16. Manufacturing
+17. Marketing
+18. Real Estate
+19. Retail
+
+----
+> PAGES
+----
 ## HOME
 
 “Make work fit your life with Flexible Jobs. We offer a wide range of job 
@@ -9,6 +36,11 @@ work, remote work, or freelance work, we’ve got you covered. Our job search
 engine is easy to use and allows you to filter jobs by location, industry, 
 and more. Sign up today and start your journey towards finding the perfect 
 job!”
+
+
+## FIND JOBS
+
+
 
 ## ABOUT
 
