@@ -15,6 +15,7 @@ class GeneralUserProflie(models.Model): #  general user profile with use details
     address                     = models.TextField()
     phoneNumber                 = models.CharField(max_length=25, default='+263 xxx xxx xxxx')
     profile_image               = models.ImageField(max_length=255, upload_to='static/profileImages',null=True, blank=True)
+    resume                      = models.FileField(upload_to='static/resumes/', null=True, blank=True) # this might be edited later to be in its own model with other doc, like certificates
 
     def __str__(self):
         return f"{self.firstName} {self.lastName} (User: {self.user.username})"
