@@ -21,42 +21,42 @@ class GeneralUserProflie(models.Model): #  general user profile with use details
         return f"{self.firstName} {self.lastName} (User: {self.user.username})"
 
 class EducationProfile(models.Model): #user education background
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_education')
-    institution = models.CharField(max_length=100)
-    degree = models.CharField(max_length=100)
-    field = models.CharField(max_length=100)
-    start_date = models.DateField()
-    end_date = models.DateField()
-    description = models.TextField()
+    user                        = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_education')
+    institution                 = models.CharField(max_length=100)
+    degree                      = models.CharField(max_length=100)
+    field                       = models.CharField(max_length=100)
+    start_date                  = models.DateField()
+    end_date                    = models.DateField()
+    description                 = models.TextField()
 
     def __str__(self):
         return f"{self.institution}"
 
 class WorkExperienceProfile(models.Model): #user work background
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_workexperience")
-    position = models.CharField(max_length=50)
-    experience_type = models.CharField(max_length=50)
-    company_name = models.CharField(max_length=50)
-    industry = models.CharField(max_length=50)
-    description = models.TextField()
-    location = models.CharField(max_length=100)
-    is_active = models.BooleanField()
-    start_date = models.DateField()
-    end_date = models.DateField()
+    user                        = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_workexperience")
+    position                    = models.CharField(max_length=50)
+    experience_type             = models.CharField(max_length=50)
+    company_name                = models.CharField(max_length=50)
+    industry                    = models.CharField(max_length=50)
+    description                 = models.TextField()
+    location                    = models.CharField(max_length=100)
+    is_active                   = models.BooleanField()
+    start_date                  = models.DateField()
+    end_date                    = models.DateField()
 
     def __str__(self):
         return f"User: {self.user.username}, Position: {self.position}"
 
 
 class Skill(models.Model):          #skills model to store  skills 
-    name = models.CharField(max_length=100)
+    name                        = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
 
 class UserSkill(models.Model): #wil store user skills based on the skills saved in the skills table
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    skill = models.ForeignKey(Skill, on_delete=models.CASCADE)
+    user                        = models.ForeignKey(User, on_delete=models.CASCADE)
+    skill                       = models.ForeignKey(Skill, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.user.username} - {self.skill.name}"
