@@ -72,4 +72,8 @@ class CompanyUserProfile(models.Model): #profile for the company user
     role                        = models.CharField(max_length=30)
     profile_image               = models.ImageField(max_length=255, upload_to='static/profileImages',null=True, blank=True)
 
+    def __str__(self):
+        return f"{self.user.username} from {self.company}"
+    
+
 
