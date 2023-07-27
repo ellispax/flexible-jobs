@@ -1,0 +1,77 @@
+.profile-panel {
+  display: grid;
+
+  gap: 20px; /* Add the desired space between job cards */
+  padding-left: 250px;
+  padding-right:250px;
+  padding-top:20px;
+  padding-bottom:20px;
+  width: 100%;
+  // height: 300px;
+}
+
+.header-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 350px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.banner-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background-image: url('https://i.pinimg.com/originals/e1/ff/5b/e1ff5b7953bab42e1cdcaf9fe8f74a18.jpg'); /* Add the actual path to your background image */
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.profile-photo {
+  position: relative;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: 80px; /* Adjust the value to position the photo as desired */
+}
+
+.user-info {
+  margin-top: 220px; /* Adjust the value to position the user info as desired */
+  text-align: center;
+  color: #000; /* Set the color for the user info text */
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+
+.job-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px; /* Set a fixed height for the job cards to keep them consistent */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc; /* Add the border with a color of your choice */
+  border-radius: 8px; /* Add rounded edges */
+}

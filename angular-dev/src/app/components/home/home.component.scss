@@ -1,0 +1,25 @@
+.home-container {
+  display: flex;
+  height: 100vh;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+.job-list-section {
+  flex: 1;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+  overflow-y: auto; /* To enable scrolling if job list is long */
+}
+
+.job-details-section {
+  flex: 2;
+  padding: 20px;
+  overflow-y: auto; /* To enable scrolling if job details are long */
+}
+.search-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}

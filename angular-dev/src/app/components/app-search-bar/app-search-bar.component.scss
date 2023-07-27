@@ -1,0 +1,27 @@
+/* search-bar.component.css */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Add space between the textboxes and the button */
+}
+
+.mat-form-field {
+  flex: 1;
+}
+
+.mat-form-field-wrapper {
+  background-color: rgba(0, 0, 0, 0.1); /* Set the background color of the textboxes */
+  border-radius: 10px; /* Add rounded edges to the textboxes */
+  padding: 5px; /* Add padding to the textboxes */
+}
+
+button {
+  min-width: 100px; /* Set a minimum width for the button */
+}
+
+/* Optional: Adjust the height of the search container */
+/* You can change the height based on your design preferences */
+.search-container {
+  height: 50px;
+}

@@ -1,0 +1,58 @@
+// /* job-details.component.css */
+// .job-details-container {
+//   border: 1px solid #ccc; /* Add a border with a gray color */
+//   border-radius: 10px; /* Add rounded corners */
+//   padding: 20px;
+//   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+// }
+
+// .job-details-container h2 {
+//   font-size: 24px;
+//   font-weight: bold;
+//   margin-bottom: 10px;
+// }
+
+// .job-details-container p {
+//   font-size: 16px;
+//   margin-bottom: 8px;
+// }
+
+/* job-details.component.css */
+.job-header{
+  padding-top:5px;
+
+  // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.job-details-container {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.job-details-container h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.job-details-container h4{
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.job-details-container hr {
+  margin: 10px 0; /* Add some margin above and below the horizontal rule */
+}
+.company-body h5{
+  font-weight: bold;
+}
+
+/* Flexbox styles to arrange icon and text in the same row */
+.job-details-container .job-details-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Add some space between each icon + text row */
+}
+
+.job-details-container .job-details-item fa-icon {
+  margin-right: 10px; /* Add space between the icon and the text */
+}

@@ -1,0 +1,19 @@
+<
+<div class="search-section">
+  <!-- Search Bar Component -->
+  <app-app-search-bar></app-app-search-bar>
+</div>
+<hr>
+<div class="home-container">
+
+  <div class="job-list-section">
+
+    <!-- Job List Component -->
+    <app-job-list (jobSelected)="showJobDetails($event)"></app-job-list>
+  </div>
+  <div class="job-details-section">
+    <!-- Job Details Component -->
+    <app-job-details [selectedJob]="selectedJob"></app-job-details>
+  </div>
+</div>
+
