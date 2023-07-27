@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from .models import GeneralUserProflie, CompanyUserProfile, Skill, EducationProfile, WorkExperienceProfile
-from .serializers import GeneralUserProfileSerializer, CompanyUserProfileSerializer, SkillSerializer, EducationProfileSerializer, WorkExperienceSerializer
+from .serializers import GeneralUserProfileSerializer, CompanyUserProfileSerializer, SkillSerializer, EducationProfileSerializer, WorkExperienceProfileSerializer
 
 from main.permissions import IsGeneralUser, IsCompanyUser, IsAdminUser
 from rest_framework.authtoken.models import Token
@@ -19,6 +19,21 @@ from rest_framework.authtoken.models import Token
 @api_view(['GET'])
 @authentication_classes([TokenAuthentication])
 @permission_classes([IsAuthenticated, IsGeneralUser])
+def get_user_profile(request):
+    user = request.user
+
+    try:
+        profile = GeneralUserProflie.objects.get(user=user)
+    except GeneralUserProflie.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    serializer = GeneralUserProfileSerializer(profile)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated, IsGeneralUser])
+
 def get_general_user_profile(request):
     user = request.user  # This will give you the authenticated user
 

@@ -22,6 +22,7 @@ class GeneralUserProflie(models.Model): #  general user profile with use details
 
 class EducationProfile(models.Model): #user education background
     user                        = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_education')
+    profile                     = models.ForeignKey(GeneralUserProflie, on_delete=models.CASCADE, related_name='user_profile')
     institution                 = models.CharField(max_length=100)
     degree                      = models.CharField(max_length=100)
     field                       = models.CharField(max_length=100)
@@ -34,6 +35,7 @@ class EducationProfile(models.Model): #user education background
 
 class WorkExperienceProfile(models.Model): #user work background
     user                        = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_workexperience")
+    profile                     = models.ForeignKey(GeneralUserProflie, on_delete=models.CASCADE, related_name='work_profile')
     position                    = models.CharField(max_length=50)
     experience_type             = models.CharField(max_length=50)
     company_name                = models.CharField(max_length=50)
@@ -56,6 +58,7 @@ class Skill(models.Model):          #skills model to store  skills
 
 class UserSkill(models.Model): #wil store user skills based on the skills saved in the skills table
     user                        = models.ForeignKey(User, on_delete=models.CASCADE)
+    profile                     = models.ForeignKey(GeneralUserProflie, on_delete=models.CASCADE, related_name= "skill_profile")
     skill                       = models.ForeignKey(Skill, on_delete=models.CASCADE)
 
     def __str__(self):
