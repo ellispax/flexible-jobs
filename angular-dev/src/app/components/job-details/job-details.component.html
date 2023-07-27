@@ -1,0 +1,61 @@
+<div class="job-details-container">
+  <div class="job-header">
+    <h2>{{ selectedJob.title }}</h2>
+  <div class="job-details-item">
+    <fa-icon [icon]="faBuilding" size="lg"></fa-icon>
+    <span>{{ selectedJob.company.name }}</span>
+  </div>
+  <div class="job-details-item">
+    <fa-icon [icon]="faUser" size="lg"></fa-icon>
+    <span>{{ selectedJob.company.company_size }}</span>
+  </div>
+  <div class="job-details-item">
+    <fa-icon [icon]="faMap" size="lg"></fa-icon>
+    <span>{{ selectedJob.location }}</span>
+  </div>
+
+  <button mat-raised-button color="primary"> Apply Here</button>
+  </div>
+  <hr>
+  <div class="job-body">
+    <span><strong><h4> Job Description</h4></strong></span>
+    <p>{{selectedJob.description}}</p>
+
+    <p><strong>What you will be doing at our company: </strong></p>
+
+    <ul>
+      <li *ngFor="let bullet of selectedJob.duties_bullets">
+       <strong>*</strong> {{ bullet }}
+      </li>
+    </ul>
+
+    <p><strong>What we are looking for at our company: </strong></p>
+    <ul>
+      <li *ngFor="let bullet of selectedJob.requirements_bullets">
+       <strong>*</strong> {{ bullet }}
+      </li>
+    </ul>
+
+  </div>
+  <hr>
+  <div class="company-body">
+    <span>
+      <h4>Company</h4>
+      <div class="job-details-item">
+        <span>Size:  {{selectedJob.company.company_size}}</span>
+      </div>
+      <div class="job-details-item">
+        <span>Industry:  {{selectedJob.company.industry}}</span>
+      </div>
+      <div class="job-details-item">
+        <span>Website:  </span>
+        <a href="{{ selectedJob.company.website }}" target="_blank">{{ selectedJob.company.website }}</a>
+      </div>
+      <h4>Description </h4>
+      <p>{{selectedJob.company.description}}</p>
+    </span>
+  </div>
+
+
+  <!-- Add more job details properties as needed -->
+</div>
