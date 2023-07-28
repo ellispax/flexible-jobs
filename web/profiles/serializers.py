@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import GeneralUserProflie, CompanyUserProfile, Skill, UserSkill,EducationProfile, WorkExperienceProfile
 from users.models import User
+from users.serializers import UserSerializer
 
 # class GeneralUserProfileSerializer(serializers.ModelSerializer):
 #     class Meta:
@@ -42,7 +43,8 @@ class EducationProfileSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class GeneralUserProfileSerializer(serializers.ModelSerializer):
-    profile = EducationProfileSerializer(many=True, source='user_profile')
+    user = UserSerializer()
+    education_profile = EducationProfileSerializer(many=True, source='user_profile')
     work_experience_profiles = WorkExperienceProfileSerializer(many=True, source='work_profile')
 
     skills = UserSkillSerializer(many=True, source='skill_profile')
