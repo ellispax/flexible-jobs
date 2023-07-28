@@ -27,8 +27,9 @@ class EducationProfile(models.Model): #user education background
     degree                      = models.CharField(max_length=100)
     field                       = models.CharField(max_length=100)
     start_date                  = models.DateField()
-    end_date                    = models.DateField()
+    end_date                    = models.DateField(null=True)
     description                 = models.TextField()
+    # is_active                   = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.institution}"
@@ -42,9 +43,9 @@ class WorkExperienceProfile(models.Model): #user work background
     industry                    = models.CharField(max_length=50)
     description                 = models.TextField()
     location                    = models.CharField(max_length=100)
-    is_active                   = models.BooleanField()
+    is_active                   = models.BooleanField(default=False)
     start_date                  = models.DateField()
-    end_date                    = models.DateField()
+    end_date                    = models.DateField(null=True)
 
     def __str__(self):
         return f"User: {self.user.username}, Position: {self.position}"
