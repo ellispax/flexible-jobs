@@ -47,21 +47,29 @@ def get_general_user_profile(request):
 
 
 
-@api_view(['POST','GET', 'PUT', 'DELETE'])    
-@authentication_classes([TokenAuthentication])  # Use TokenAuthentication
-@permission_classes([IsAuthenticated, IsGeneralUser])       #this view is for previous education for the job seeker
+@api_view(['POST', 'GET', 'PUT', 'DELETE'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated, IsGeneralUser])
 def user_education_profile(request):
-    user = request.user  # This will give you the authenticated user
+    if request.method == 'POST':
+        user = request.user  # This will give you the authenticated user
+        profile = GeneralUserProflie.objects.get(user=user)  # Get the profile of the user
 
-    try:
-        profile = EducationProfile.objects.get(user=user)
-    except EducationProfile.DoesNotExist:
-        return Response(status=status.HTTP_404_NOT_FOUND)
-    if request.method == 'POST':                #post method for adiing new education record ( might have to move it as a seperate view)
-        serializer = EducationProfileSerializer(profile)
+        data = {
+            'user': user.id,
+            'profile': profile.id,
+            'institution': request.data.get('institution'),
+            'degree': request.data.get('degree'),
+            'field': request.data.get('field'),
+            'start_date': request.data.get('start_date'),
+            'end_date': request.data.get('end_date'),
+            'description': request.data.get('description'),
+        }
+
+        serializer = EducationProfileSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'GET':               #get all education records for the logged in user 
