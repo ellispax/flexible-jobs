@@ -1,13 +1,22 @@
 .profile-panel {
   display: grid;
-
   gap: 20px; /* Add the desired space between job cards */
   padding-left: 250px;
-  padding-right:250px;
-  padding-top:20px;
-  padding-bottom:20px;
+  padding-right: 250px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   width: 100%;
   // height: 300px;
+}
+.education-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* Add some margin to separate from the education cards */
+
+  button {
+    margin-left: 10px; /* Add some space between the buttons */
+  }
 }
 
 .header-card {
@@ -29,7 +38,7 @@
   left: 0;
   width: 100%;
   height: 60%;
-  background-image: url('https://i.pinimg.com/originals/e1/ff/5b/e1ff5b7953bab42e1cdcaf9fe8f74a18.jpg'); /* Add the actual path to your background image */
+  background-image: url("https://i.pinimg.com/originals/e1/ff/5b/e1ff5b7953bab42e1cdcaf9fe8f74a18.jpg"); /* Add the actual path to your background image */
   background-size: cover;
   background-position: center;
   border-top-left-radius: 8px;
@@ -64,7 +73,6 @@ p {
   margin-bottom: 5px;
 }
 
-
 .job-card {
   display: flex;
   flex-direction: column;
@@ -74,4 +82,17 @@ p {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border: 1px solid #ccc; /* Add the border with a color of your choice */
   border-radius: 8px; /* Add rounded edges */
+}
+.edit-button {
+  background-color: #007bff; /* Change the button colors to your preference */
+  color: #fff;
+  border: none;
+  // padding: 1px 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-button {
+  background-color: #28a745; /* Change the button colors to your preference */
+  margin-left: 5px;
 }

@@ -55,7 +55,20 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 
+<<<<<<< Updated upstream
 # Proposed Functions
+=======
+# Proposed Functions - This is the Front-End in Angular
+
+#### `chatbot: response`
+
+        🤖 : "Creating an online job portal/application
+        similar to Indeed or JobStreet is an ambitious
+        project. Here's an outline of the key features
+        and components you can consider implementing
+        using Django:"
+
+>>>>>>> Stashed changes
 ## 📌 _User Authentication and Profiles:_
 
 - [ ] Implement user registration and login functionality for both job seekers and employers.

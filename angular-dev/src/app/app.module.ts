@@ -4,21 +4,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ButtonModule } from 'carbon-components-angular/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatInputModule} from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
-// import { MatToolbarModule } from '@angular/material/toolbar';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { HeaderModule } from 'carbon-components-angular/ui-shell';
-
-
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,8 +32,7 @@ import { JobListComponent } from './components/job-list/job-list.component';
 import { JobDetailsComponent } from './components/job-details/job-details.component';
 import { AppSearchBarComponent } from './components/app-search-bar/app-search-bar.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
-
-
+import { AddEducationComponent } from './components/add-education/add-education.component';
 
 @NgModule({
   declarations: [
@@ -47,9 +45,11 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     JobListComponent,
     JobDetailsComponent,
     AppSearchBarComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    AddEducationComponent,
   ],
   imports: [
+    MDBBootstrapModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     ButtonModule,
@@ -69,13 +69,12 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     MatExpansionModule,
     MatSidenavModule,
     MatDialogModule,
-    MatDividerModule
-
-
+    MatDividerModule,
+    NgbModule,
 
     // ButtonSet
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
