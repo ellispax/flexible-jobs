@@ -20,15 +20,41 @@
 </div>
 
 <div class="profile-panel">
-  <h2>Education</h2>
-  <div class="job-card">
-    <p>My name is Ellis</p>
+  <div class="education-heading">
+    <h2>Education</h2>
+
+    <button mat-icon-button color="primary" (click)="openAddEducation()">
+      <mat-icon>add</mat-icon>
+    </button>
+    <button mat-icon-button color="primary" (click)="openAddEducation()">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </div>
+  <div *ngFor="let education of userProfile.education_profile" class="job-card">
+    <h3>{{ education.institution }}</h3>
+    <p>{{ education.degree }}</p>
+    <p>{{ education.start_date }} - {{ education.end_date }}</p>
+    <p>{{ education.description }}</p>
   </div>
 </div>
 
 <div class="profile-panel">
-  <h2>Work Experience</h2>
-  <div class="job-card">
-    <p>My name is Ellis</p>
+  <div class="education-heading">
+    <h2>Work Experience</h2>
+    <button mat-icon-button color="primary" (click)="openAddEducation()">
+      <mat-icon>add</mat-icon>
+    </button>
+    <button mat-icon-button color="primary" (click)="openAddEducation()">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </div>
+  <div
+    *ngFor="let work of userProfile.work_experience_profiles"
+    class="job-card"
+  >
+    <h3>{{ work.position }}</h3>
+    <p>{{ work.company_name }}</p>
+    <p>{{ work.start_date }} - {{ work.end_date }}</p>
+    <p>{{ work.description }}</p>
   </div>
 </div>
