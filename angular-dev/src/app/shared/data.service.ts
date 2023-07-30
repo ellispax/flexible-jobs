@@ -32,4 +32,15 @@ export class DataService {
     const url = `${this.backendUrl}profiles/education-profile/${educationData.id}/`;
     return this.http.put<any>(url, educationData, { headers: this.headers });
   }
+
+  // Function to add an work experience profile
+  addWorkProfile(workData: workExperience): Observable<any> {
+    const url = `${this.backendUrl}profiles/work-profile`;
+    return this.http.post<any>(url, workData, { headers: this.headers });
+  }
+  // Function to update an education profile
+  updateWorkProfile(workData: workExperience): Observable<any> {
+    const url = `${this.backendUrl}profiles/work-profile/${workData.id}/`;
+    return this.http.put<any>(url, workData, { headers: this.headers });
+  }
 }

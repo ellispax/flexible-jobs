@@ -3,6 +3,7 @@ import { ProfiledataService } from 'src/app/shared/profiledata.service';
 import { UserProfile } from 'src/app/models/user-profile.models';
 import { MatDialog } from '@angular/material/dialog';
 import { AddEducationComponent } from '../add-education/add-education.component';
+import { AddWorkComponent } from '../add-work/add-work.component';
 
 @Component({
   selector: 'app-user-profile',
@@ -51,6 +52,17 @@ export class UserProfileComponent implements OnInit {
         console.error('Error fetching user profile data:', error);
       },
     );
+  }
+  openAddWork() {
+    const dialogRef = this.dialog.open(AddWorkComponent, {
+      width: '400px', // Adjust the width as per your requirements
+      // You can also specify other dialog configuration options here
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      // Handle any actions after the dialog is closed
+      console.log('Dialog closed', result);
+    });
   }
   openAddEducation() {
     const dialogRef = this.dialog.open(AddEducationComponent, {

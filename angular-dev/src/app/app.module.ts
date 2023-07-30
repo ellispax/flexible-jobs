@@ -33,6 +33,7 @@ import { JobDetailsComponent } from './components/job-details/job-details.compon
 import { AppSearchBarComponent } from './components/app-search-bar/app-search-bar.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AddEducationComponent } from './components/add-education/add-education.component';
+import { AddWorkComponent } from './components/add-work/add-work.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { AddEducationComponent } from './components/add-education/add-education.
     AppSearchBarComponent,
     UserProfileComponent,
     AddEducationComponent,
+    AddWorkComponent,
   ],
   imports: [
     MDBBootstrapModule.forRoot(),
