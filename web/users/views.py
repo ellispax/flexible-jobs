@@ -49,43 +49,7 @@ def register(request):                  #register a general user (job applicant)
     }, status=status.HTTP_400_BAD_REQUEST)
 
 
-# @api_view(['POST'])
-# def register(request):                  #register a general user (job applicant)
-#     userData = {
-#         'email': request.data.get('email'),
-#         'username': request.data.get('username'),
-#         'password': request.data.get('password')
-#     }
-#     profiledata = {
-#         'firstName': request.data.get('firstName'),
-#         'lastName': request.data.get('lastName'),
-#         'gender': request.data.get('gender'),
-#         'address': request.data.get('address'),
-#         'phoneNumber': request.data.get('phoneNumber'),
-#         'profile_image': request.data.get('profile_image')
-#     }
 
-#     user_serializer = UserSerializer(data=userData)
-#     general_profile_serializer = GeneralUserProfileSerializer(data=profiledata)
-
-#     if user_serializer.is_valid():              #user serializer used to create the Auth User account for login
-#         user = user_serializer.save()
-
-#         # Update profiledata with user ID
-#         profiledata['user'] = user.id
-#         general_profile_serializer = GeneralUserProfileSerializer(data=profiledata)
-
-#         try:
-#             general_profile_serializer.is_valid(raise_exception=True)
-#             general_profile_serializer.save()   #profile serializer for creating their profile after their auth account has been created
-#         except serializers.ValidationError as e:
-#             # Rollback user creation
-#             user.delete()
-#             return Response(e.detail, status=status.HTTP_400_BAD_REQUEST)
-
-#         return Response(user_serializer.data, status=status.HTTP_201_CREATED)
-
-#     return Response(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['POST'])
 def custom_login(request):
