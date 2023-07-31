@@ -23,8 +23,6 @@ export interface workExperience {
   is_active: false;
   start_date: string;
   end_date: string;
-  user: number;
-  profile: number;
 }
 export interface Skill {
   id: number;

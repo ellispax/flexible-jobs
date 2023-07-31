@@ -1,38 +1,58 @@
 import { Injectable } from '@angular/core';
-import { HttpClient , HttpHeaders, HttpErrorResponse} from '@angular/common/http';
+import {
+  HttpClient,
+  HttpHeaders,
+  HttpErrorResponse,
+} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { GeneralUser } from '../models/user.models';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-  private backendUrl = 'http://localhost:8000/users/login';
+  private backendUrl = 'http://localhost:8000/';
+  private headers = new HttpHeaders({
+    'Content-Type': 'application/json', // Explicitly set the content type to JSON
+  });
 
-
-  constructor(private http: HttpClient, private router:Router) { }
-
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+  ) {}
 
   login(email: string, password: string): Observable<any> {
-    console.log('Username: ', email, 'Password: ',password)
     const loginData = { email, password };
-     // Set the headers for the 'Content-Type' to 'application/json'
-     const httpOptions = {
+    // Set the headers for the 'Content-Type' to 'application/json'
+    const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
+        'Content-Type': 'application/json',
+      }),
     };
+    const url = `${this.backendUrl}users/login`;
 
-    return this.http.post<any>(this.backendUrl, loginData, httpOptions).pipe(
-      tap(response => {
+    return this.http.post<any>(url, loginData, httpOptions).pipe(
+      tap((response) => {
         // Save the authentication token to local storage
         localStorage.setItem('authToken', response.token);
 
         // Redirect to the home page after a successful login
         this.router.navigateByUrl('/home');
       }),
-      catchError(this.handleError) // Handle errors if any
+      catchError(this.handleError), // Handle errors if any
+    );
+  }
+
+  register(userData: GeneralUser): Observable<any> {
+    const url = `${this.backendUrl}users/register`;
+    return this.http.post<any>(url, userData, { headers: this.headers }).pipe(
+      tap((response) => {
+        // Redirect to the login page after a successful login
+        this.router.navigateByUrl('/login');
+      }),
+      catchError(this.handleError), // Handle errors if any
     );
   }
 
