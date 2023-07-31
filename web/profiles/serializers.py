@@ -43,11 +43,11 @@ class EducationProfileSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class GeneralUserProfileSerializer(serializers.ModelSerializer):
-    user = UserSerializer()
-    education_profile = EducationProfileSerializer(many=True, source='user_profile')
-    work_experience_profiles = WorkExperienceProfileSerializer(many=True, source='work_profile')
+    user = UserSerializer(read_only=True,required=False)
+    education_profile = EducationProfileSerializer(many=True, source='user_profile', required=False)
+    work_experience_profiles = WorkExperienceProfileSerializer(many=True, source='work_profile', required=False)
 
-    skills = UserSkillSerializer(many=True, source='skill_profile')
+    skills = UserSkillSerializer(many=True, source='skill_profile', required=False)
 
     class Meta:
         model = GeneralUserProflie

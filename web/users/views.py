@@ -18,7 +18,6 @@ from profiles.serializers import GeneralUserProfileSerializer, CompanyUserProfil
 
 # Create your views here.
 User = get_user_model()
-
 @api_view(['POST'])
 def register(request):                  #register a general user (job applicant)
     userData = {
@@ -38,24 +37,19 @@ def register(request):                  #register a general user (job applicant)
     user_serializer = UserSerializer(data=userData)
     general_profile_serializer = GeneralUserProfileSerializer(data=profiledata)
 
-    if user_serializer.is_valid():              #user serializer used to create the Auth User account for login
+    if user_serializer.is_valid() and general_profile_serializer.is_valid():
         user = user_serializer.save()
-
-        # Update profiledata with user ID
-        profiledata['user'] = user.id
-        general_profile_serializer = GeneralUserProfileSerializer(data=profiledata)
-
-        try:
-            general_profile_serializer.is_valid(raise_exception=True)
-            general_profile_serializer.save()   #profile serializer for creating their profile after their auth account has been created
-        except serializers.ValidationError as e:
-            # Rollback user creation
-            user.delete()
-            return Response(e.detail, status=status.HTTP_400_BAD_REQUEST)
+        general_profile_serializer.save(user=user)
 
         return Response(user_serializer.data, status=status.HTTP_201_CREATED)
 
-    return Response(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    return Response({
+        'user': user_serializer.errors,
+        'general_profile': general_profile_serializer.errors
+    }, status=status.HTTP_400_BAD_REQUEST)
+
+
+
 
 @api_view(['POST'])
 def custom_login(request):
