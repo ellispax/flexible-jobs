@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="card-header">
+    <a class="btn btn-success">Add Company [+]</a>
+  </div>
+  <br />
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+      <mat-cell *matCellDef="let company">{{ company.name }}</mat-cell>
+    </ng-container>
+
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+      <mat-cell *matCellDef="let company">{{ company.email }}</mat-cell>
+    </ng-container>
+
+    <!-- Website Column -->
+    <ng-container matColumnDef="website">
+      <mat-header-cell *matHeaderCellDef>Websitr</mat-header-cell>
+      <mat-cell *matCellDef="let company">{{ company.website }}</mat-cell>
+    </ng-container>
+
+    <!-- Industry Column -->
+    <ng-container matColumnDef="industry">
+      <mat-header-cell *matHeaderCellDef>Industry</mat-header-cell>
+      <mat-cell *matCellDef="let company">{{ company.industry }}</mat-cell>
+    </ng-container>
+
+    <!-- Size Column -->
+    <ng-container matColumnDef="size">
+      <mat-header-cell *matHeaderCellDef>Size</mat-header-cell>
+      <mat-cell *matCellDef="let company">{{ company.company_size }}</mat-cell>
+    </ng-container>
+    <!-- Actions Column -->
+    <ng-container matColumnDef="action">
+      <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+      <mat-cell *matCellDef="let company">
+        <button
+          mat-icon-button
+          color="primary"
+          (click)="openEditCompany(company)"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deleteCompany(company)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+</div>

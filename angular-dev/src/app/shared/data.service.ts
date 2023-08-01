@@ -3,6 +3,7 @@ import {
   educationProfile,
   workExperience,
 } from '../models/user-profile.models';
+import { Company } from '../models/company.model';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -11,6 +12,7 @@ import { Observable } from 'rxjs';
 })
 export class DataService {
   private backendUrl = 'http://localhost:8000/';
+  private companyHeaders = new HttpHeaders({});
   private headers = new HttpHeaders({
     'Content-Type': 'application/json', // Explicitly set the content type to JSON
   });
@@ -19,6 +21,10 @@ export class DataService {
     const authToken = localStorage.getItem('authToken');
     if (authToken) {
       this.headers = this.headers.set('Authorization', `Token ${authToken}`);
+      this.companyHeaders = this.companyHeaders.set(
+        'Authorization',
+        `Token ${authToken}`,
+      );
     }
   }
 
@@ -42,5 +48,21 @@ export class DataService {
   updateWorkProfile(workData: workExperience): Observable<any> {
     const url = `${this.backendUrl}profiles/work-profile/${workData.id}/`;
     return this.http.put<any>(url, workData, { headers: this.headers });
+  }
+
+  //get companies list function
+  getCompanies(): Observable<Company[]> {
+    const url = `${this.backendUrl}company/list`;
+    return this.http.get<Company[]>(url, { headers: this.headers });
+  }
+  // Function to add a company
+  addCompany(companyData: Company): Observable<any> {
+    const url = `${this.backendUrl}company/create`;
+    return this.http.post<any>(url, companyData, { headers: this.headers });
+  }
+  // Function to update a company
+  updateCompany(companyData: Company): Observable<any> {
+    const url = `${this.backendUrl}company/details/${companyData.id}/`;
+    return this.http.put<any>(url, companyData, { headers: this.headers });
   }
 }

@@ -16,6 +16,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatTableModule } from '@angular/material/table';
 
 import { HeaderModule } from 'carbon-components-angular/ui-shell';
 
@@ -34,6 +35,8 @@ import { AppSearchBarComponent } from './components/app-search-bar/app-search-ba
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AddEducationComponent } from './components/add-education/add-education.component';
 import { AddWorkComponent } from './components/add-work/add-work.component';
+import { AddCompanyComponent } from './components/add-company/add-company.component';
+import { CompanyListComponent } from './components/company-list/company-list.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +52,8 @@ import { AddWorkComponent } from './components/add-work/add-work.component';
     UserProfileComponent,
     AddEducationComponent,
     AddWorkComponent,
+    AddCompanyComponent,
+    CompanyListComponent,
   ],
   imports: [
     MDBBootstrapModule.forRoot(),
@@ -73,6 +78,7 @@ import { AddWorkComponent } from './components/add-work/add-work.component';
     MatDialogModule,
     MatDividerModule,
     NgbModule,
+    MatTableModule,
 
     // ButtonSet
   ],
