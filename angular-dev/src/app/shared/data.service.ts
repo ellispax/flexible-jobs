@@ -22,8 +22,10 @@ export class DataService {
     if (authToken) {
       this.headers = this.headers.set('Authorization', `Token ${authToken}`);
       this.companyHeaders = this.companyHeaders.set(
-        'Authorization',
-        `Token ${authToken}`,
+        'Content-Type',
+        'application/json', // Explicitly set the content type to JSON
+        // 'Authorization',
+        // `Token ${authToken}`,
       );
     }
   }
@@ -58,7 +60,9 @@ export class DataService {
   // Function to add a company
   addCompany(companyData: Company): Observable<any> {
     const url = `${this.backendUrl}company/create`;
-    return this.http.post<any>(url, companyData, { headers: this.headers });
+    return this.http.post<any>(url, companyData, {
+      headers: this.headers,
+    });
   }
   // Function to update a company
   updateCompany(companyData: Company): Observable<any> {

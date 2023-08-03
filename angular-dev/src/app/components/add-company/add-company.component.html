@@ -1,1 +1,118 @@
-<p>add-company works!</p>
+<div class="modal-header">
+  <h5 class="modal-title">Add New Company</h5>
+  <button type="button" class="close" (click)="closeDialog()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form>
+    <div class="form-group">
+      <label for="name">Company Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        [(ngModel)]="companyData.name"
+        name="institution"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        [(ngModel)]="companyData.email"
+        name="email"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="website">Website</label>
+      <input
+        type="text"
+        class="form-control"
+        id="website"
+        placeholder="https://www.example.com"
+        [(ngModel)]="companyData.website"
+        name="website"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="industry">Industry</label>
+      <input
+        type="text"
+        class="form-control"
+        id="industry"
+        [(ngModel)]="companyData.industry"
+        name="industry"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input
+        type="text"
+        class="form-control"
+        id="description"
+        [(ngModel)]="companyData.description"
+        name="description"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input
+        type="text"
+        class="form-control"
+        id="address"
+        [(ngModel)]="companyData.address"
+        name="address"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number</label>
+      <input
+        type="text"
+        class="form-control"
+        id="phoneNumber"
+        [(ngModel)]="companyData.phone_number"
+        name="phoneNumber"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="size">Company Size</label>
+      <input
+        type="text"
+        class="form-control"
+        id="size"
+        [(ngModel)]="companyData.company_size"
+        name="size"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="estDate">Established Date</label>
+      <input
+        type="date"
+        class="form-control"
+        id="estdate"
+        [(ngModel)]="companyData.established_date"
+        name="estDate"
+        required
+      />
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="closeDialog()">
+    Cancel
+  </button>
+  <button type="button" class="btn btn-primary" (click)="saveCompany()">
+    Save
+  </button>
+</div>

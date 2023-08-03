@@ -13,6 +13,8 @@ import {
   styleUrls: ['./add-company.component.scss'],
 })
 export class AddCompanyComponent implements OnInit {
+  company: any;
+
   companyData: Company = {
     id: 0,
     name: '',
@@ -20,10 +22,10 @@ export class AddCompanyComponent implements OnInit {
     website: '',
     industry: '',
     description: '',
-    logo: '',
+    address: '',
     phone_number: '',
     company_size: '',
-    established_date: '',
+    established_date: new Date(),
   };
 
   constructor(

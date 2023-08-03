@@ -3,6 +3,7 @@ import { DataService } from 'src/app/shared/data.service';
 import { Company } from 'src/app/models/company.model';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { AddCompanyComponent } from '../add-company/add-company.component';
 @Component({
   selector: 'app-company-list',
   templateUrl: './company-list.component.html',
@@ -41,7 +42,16 @@ export class CompanyListComponent implements OnInit {
     );
   }
 
-  openAddCompany() {}
+  openAddCompany() {
+    const dialogRef = this.dialog.open(AddCompanyComponent, {
+      width: '400px', // Adjust the width as per your requirements
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      // Handle any actions after the dialog is closed
+      console.log('Dialog closed', result);
+    });
+  }
 
   openEditCompany(company: Company) {}
 

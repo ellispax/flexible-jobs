@@ -1,6 +1,6 @@
 <div class="container">
   <div class="card-header">
-    <a class="btn btn-success">Add Company [+]</a>
+    <a class="btn btn-success" (click)="openAddCompany()">Add Company [+] </a>
   </div>
   <br />
   <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -18,7 +18,7 @@
 
     <!-- Website Column -->
     <ng-container matColumnDef="website">
-      <mat-header-cell *matHeaderCellDef>Websitr</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef>Website</mat-header-cell>
       <mat-cell *matCellDef="let company">{{ company.website }}</mat-cell>
     </ng-container>
 
